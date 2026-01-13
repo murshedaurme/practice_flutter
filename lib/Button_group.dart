@@ -37,10 +37,26 @@ class ButtonGroup extends StatelessWidget {
           OutlinedButton(onPressed: () {}, child: Text('outline button'))  ,     SizedBox(height: 20,) , 
           TextButton(onPressed: (){}, child: Text("Read More",style: TextStyle(color: Colors.red),))   ,  SizedBox(height: 20,) , 
           Icon(Icons.phone) ,  SizedBox(height: 20,) , 
-          IconButton(onPressed: (){}, icon: Icon(Icons.delete, size: 30,color: Colors.red,))
+          IconButton(onPressed: (){}, icon: Icon(Icons.delete, size: 30,color: Colors.red,)),
+// likha clickable korar jonne
+        GestureDetector(onTap: (){ print('Tap on test');},
+            onDoubleTap: (){print(' double tap tesst');},
+            onLongPress: (){print('long press test ');},
+            child: Text('this is button',style: TextStyle(color: Colors.redAccent,fontSize: 45,),
+            )
+        ),
 
-        
-      ],)),
+          //GestureDetector a kono effect nai, inkWell a effect ase
+          InkWell(onTap: (){print('on tap inkwell'); },
+            child: Text('this is button22',style: TextStyle(color: Colors.redAccent,fontSize: 45,),
+            ),
+          )
+
+
+
+
+      ],)),floatingActionButton: FloatingActionButton(backgroundColor: Colors.red,foregroundColor: Colors.white,
+      onPressed: (){print('Clicked on pressed');},child: Icon(Icons.add),),
     );
   }
 }
